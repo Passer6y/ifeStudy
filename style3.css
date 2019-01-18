@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    
+    width: 800px;
+    height: auto;
+    font-size: 16px;
+    
+    
+} 
+
+.sidebar{
+    padding: 0 0 0 20px;
+    margin: 0;
+    width: 800px;
+    height: 60px;
+    background: rgba(55, 61, 63, 0.541);
+    line-height: 60px;
+}
+.base{
+    padding: 0;
+    margin: 0;
+    width: 800px;
+    height: 100px; 
+    border-top:2px solid grey;
+    border-right:2px solid grey;
+    
+}
+
+.base h2{
+    padding: 0;
+    margin: 0 20px 0 0;
+    float: left;
+    width:100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    background:rgba(158, 165, 167, 0.541);
+    
+}
+
+.base ul li{
+    display: inline-block;
+    padding: 0 40px 0 0;
+    margin: 0;
+    line-height: 100px;
+    font-size: 1rem;
+    
+}
+
+.contact,.describe, .education, .project{
+    clear: both;
+    padding: 0;
+    margin: 0;
+    width: 800px;
+    height: 100px;
+    border-top:2px solid grey;
+    border-right: 2px solid grey;
+}
+.project{
+    border-bottom:2px solid grey;
+}
+
+
+.contact h2, .describe h2, .education h2, .project h2{
+    float: left;
+    padding: 0;
+    margin: 0 20px 0 0;
+    width: 100px;
+    height: 100px;
+    background:rgba(158, 165, 167, 0.541);
+    border-top:1px solid grey;
+    text-align: center;
+    line-height: 100px;
+}
+
+
+.contact p,.describe p, .education p, .project p{
+    display: inline-block;
+    margin: 0 20px 0 0;
+    padding: 0;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 100px;
+}
+
