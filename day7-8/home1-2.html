@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+
+            .left-float{
+                float: left;
+                width:200px;
+                height: 500px;
+                color: black;
+                background: rgb(228, 139, 23);
+            
+            }
+            .right-float{
+                background: red;
+                height: 500px;  
+                margin-left: 205px;
+            }
+            .left-absolute{
+                position: absolute;
+                width: 200px;
+                height: 500px;
+                left:0;
+                background: rgb(255, 187, 0);
+            }
+            .right-absolute{
+                margin-left: 205px;
+                height: 500px;
+                background: red;
+            }
+            .flex{
+                display: flex;
+            }
+            .left-flex{
+                flex: 0 0 200px;
+                background: red;
+                
+            }
+            .right-flex{
+                flex: 1 1 auto;
+                background: green;
+            }
+            
+
+        </style>
+    </head>
+    <body>
+        <!--左侧宽度固定，右侧自适应-->
+        <!-- float+BFS法 -->
+        <!-- <div class="left-float">left-float</div>
+        <div class="right-float">right-float</div> -->
+        <!-- absolute+margin-left -->
+        <!-- <div class="left-absolute">left-absolute</div>
+        <div class="right-absolute">right-absolute</div> -->
+        <div class="flex"> 
+            <div class="left-flex">left-flex</div>
+            <div class="right-flex">right-flex</div>
+        </div>
+
+    </body>
+</html>

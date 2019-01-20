@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .left{
+                float: left;
+                width: 200px;
+                height: 500px;
+                background: red;
+            }
+            .right{
+                float:right;
+                width: 200px;
+                height: 500px;
+                background:green;
+            }
+            .main{
+                height: 500px;
+                background: blueviolet;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 使用float来实现左右固定中间动态伸缩 -->
+            <div class="left">left</div>
+            <div class="right">right</div>
+            <div class="main">main(放最后保证左右都在其上层，让其在中间自适应)</div>
+            
+        
+    </body>
+</html>

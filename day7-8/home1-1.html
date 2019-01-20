@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+        .left-float{
+            float: left;
+            width: 30%;
+            height: 100px;
+            background: rgb(17, 0, 255);
+        }
+        .right-float{
+            float:right;
+            width: 70%;
+            height: 100px;
+            background: rgb(77, 209, 77);
+        }
+
+        .left-position{
+            position:absolute;
+            top: 100px;
+            left: 0;
+            width: 30%;
+            background:rgb(0, 140, 255);
+        }
+        .right-position{
+            position:absolute;
+            right: 0;
+            top: 100px;
+            width:70%;
+            background: rgb(202, 127, 30);
+        }
+        .flex{
+            display: flex;
+        }
+        .left-flex{
+            flex:3;
+            background:hotpink
+        }
+        .right-flex{
+            flex:7;
+            background:khaki;
+        }
+        </style>
+    </head>
+    <body>
+        <!-- 实现3：7的两列布局 -->
+       <!-- <div class="left-float">left-float/div>
+        <div class="right-float">right-float</div>
+        <div class="left-position">left-position</div>
+        <div class="right-position">right-position</div> -->
+        <div class="flex">
+            <div class="left-flex">left-flex</div>
+            <div class="right-flex">right-flex</div>
+        </div>
+
+    </body>
+</html>

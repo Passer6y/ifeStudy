@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html{
+                font-size: 16px;
+
+            }
+            body{
+                height: 100%;
+                width: 100%;
+                min-width: 1000px;
+                
+                
+            }
+            * {
+                box-sizing: border-box;
+                border: 0;
+                margin: 0;
+                padding: 0;
+            }
+
+            .header{
+                width: 100%;
+                height: 70px;
+                background: rgba(51, 51, 51);
+
+            }
+            .header .header-content{
+                width: 960px;     /*960px*/
+                height: 70px;
+                margin: 0 auto;
+                
+                position: relative;  /*给a标签作参照*/
+            }
+            .header span{
+                display: inline-block;
+                line-height: 70px;
+                color: white;
+                text-align: left;
+                font-size: 1.5rem;
+            }
+            .header .box-a{
+                position: absolute;
+                top: 4px;
+                right: 0;
+            }
+            .header a{
+                color: white;
+            }
+
+            .banner{
+                width: 100%;
+                height: 230px;
+                background: rgb(87,177,39);
+
+            }
+
+            .banner .num{
+                width: 960px;
+                height: 230px;
+                margin: 0 auto;
+
+                /*给下面a标签定位*/
+                position: relative;
+                
+            }
+            .banner .box-a{
+                position: absolute;
+                right: 0;
+                bottom: 10px;
+            }
+            .banner a{
+                text-decoration: none;
+                display: inline-block;
+                width: 23px;
+                height: 28px;
+                border: 1px solid rgba(62, 86, 61, 0.8);
+                background: rgba(226, 221, 221, 0.822);
+                text-align: center;
+                line-height: 28px; 
+                font-size: 0.8rem;
+                color: rgb(107, 127, 101);
+            }
+            .banner a[class="active"]{
+                /*  激活状态 也可以用伪选择器实现？ */
+                height: 38px;
+                padding-top: 10px;
+                background: rgb(217,239,204);
+            }
+            .nav{
+                width: 100%;
+                height: 55px;
+                border-bottom: 1px solid rgb(233,233,233);
+            }
+            .nav .nav-line{
+                width: 960px;
+                height: 55px;
+                margin: 0 auto;
+                
+
+                /* 给导航标签定位 */
+                position: relative;
+
+            }
+            .nav .line-middle{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                display:flex;
+            }
+            .nav a{
+                display: inline-block;
+                width: 75px;
+                height: 35px;
+                border: 1px solid rgba(213, 213, 213, 0.8);
+                border-bottom: none;
+                border-radius: 15px 15px 0 0;
+                background:rgb(234, 234, 234);
+                color: rgb(107, 127, 101);
+                font-size: 0.9rem;
+                text-decoration: none;
+                text-align: center;
+                line-height: 35px;
+                
+
+            }
+            .nav a[class="active"]{
+                background: white;
+
+            }
+
+            .content{
+                position: absolute;
+                width: 100%;
+                top: 363px;
+                bottom: 75px;
+                
+                
+                
+            }
+            .content .content-main{
+                width: 960px;
+                height: 100%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                
+            }
+
+            .content .row{
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+                flex: 1;
+
+                
+            }
+
+            .content .row div{
+                /* 每一个盒子 */
+                display: flex;
+                flex-direction: row;
+                flex: 1;
+                border: 1px solid rgba(213, 213, 213, 0.8);
+                margin: 3px;
+                
+            }
+            .content .row div p{
+                margin: auto;
+            }
+
+
+
+            .footer{
+                width: 100%;
+                height: 60px;
+                position:absolute;
+                bottom: 0;
+                background: rgb(83, 83, 83);
+                text-align: center;
+                line-height: 60px;
+                color: white;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="header-content">
+                <span>Logo</span>
+                <div class="box-a">
+                    <a href="#">Github</a>
+                    <a href="#">Register</a>
+                    <a href="#">Login</a>
+                </div>
+            </div>
+        </div>
+        <div class="banner">
+            <div class="num">
+                <div class="box-a">
+                    <a href="#">1</a>
+                    <a href="#" class="active">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                </div>
+            </div>
+        </div>
+        <div class="nav">
+            
+            <div class="nav-line">
+                <div class="line-middle">
+                    <a class="active" href="#">Home</a>
+                    <a href="#">Profile</a>
+                    <a href="#">About</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="content-main">
+                <div class="row">
+                    <div><p>This is content 1</p></div>
+                    <div><p> content 2</p></div>
+                    <div><p>content 3</p></div>
+                </div>
+                <div class="row">
+                    <div><p>This is content 1</p></div>
+                    <div><p> content 2</p></div>
+                    <div><p>content 3</p></div>
+                    <div><p>content 4</p></div>
+                </div>
+                <div class="row">
+                    <div><p>This is content 1</p></div>
+                    <div><p> content 2</p></div>
+                    <div><p>content 3</p></div>
+                </div>
+    
+            </div>
+        </div>
+
+        <div class="footer">@ D0g3 2018</div>
+
+    </body>
+        
+</html>
