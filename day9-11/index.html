@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+
+            .header{
+                width: 100%;
+                height:  1000px;
+                background-image: url('images/background.jpg');
+                /* 给内部元素做定位 */
+                position: relative;
+            }
+            .header .title1{
+                position: absolute;
+                top: 218px;
+                width: 100%;
+                text-align: center;
+                font-family: Montserrat;
+                font-size: 62px;
+                color: rgba(255, 255, 255,0.65);
+            }
+            .header .text{
+                position: absolute;
+                top: 352px;
+                width: 100%;
+            }
+            .header .text p{
+                width: 767.92px;
+                text-align: center;
+                margin:0 auto;
+                font-family: Montserrat;
+                font-size: 20px;
+                line-height: 32px;
+                color: rgba(255, 255, 255, 0.7);
+            }
+            .header .sign{
+                position: absolute;
+                top: 540px;
+                width: 100%;
+                height: 250px;
+            }
+            
+            .header .sign .sign-box{
+                width: 970px;
+                margin: 0 auto;
+                height: 100%;
+                border: 1px solid rgba(255, 255, 255, 0.2);  
+                /* 给内部元素做定位 */
+                position: relative;
+            }
+            .header .sign .sign-box .title2{
+                position: absolute;
+                top: 61px;
+                width: 100%;
+                text-align: center;
+                font-family: Montserrat Light;
+                font-size: 16px;
+                line-height: 28px;
+                color: rgba(255, 255, 255, 0.75);
+
+            }
+            .header .sign .sign-box .subtitle{
+                position: absolute;
+                top: 93px;
+                width: 100%;
+                text-align: center;
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.3);
+            }
+            .header .sign .sign-box form{
+                position: absolute;
+                top: 148px;
+                display: flex;
+                width: 100%;
+                height: 50px;
+                justify-content: space-around;
+            }
+            .header .sign .sign-box input{
+                width: 292px;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                background-color: transparent;
+            }
+            .header .sign .sign-box input:nth-of-type(1){
+                margin-left: 100px;
+                margin-right: 30px;
+            }
+            .header .sign .sign-box input:nth-of-type(2){
+                margin-right: 30px;
+            }
+            .header .sign .sign-box button{
+                margin-right: 100px;
+                width: 125px;
+                font-weight: bold; 
+            }
+
+            /* Feature */
+            .feature{
+                width: 100%;
+                height: 710px;
+                background: white;
+
+                /* 给内部元素定位 */
+                position: relative;
+            }
+            .feature .title1{
+                position: absolute;
+                top: 89px;
+                font-size: 14px;
+                line-height: 28px;
+                width: 100%;
+                color: black;
+                font-family: Montserrat;
+                text-align: center;
+            }
+            .feature .title2{
+                position: absolute;
+                top: 139px;
+                width: 100%;
+                text-align: center;
+                font-size: 42px;
+                line-height: 53px;
+                font-family: Montserrat;
+                color: rgba(0,0,0,0.6);
+            }
+            .feature .features {
+                position:absolute;
+                top: 317px;
+                width: 100%;
+                height: 300px;
+
+
+            }
+            .feature .features-box{
+                width: 1000px;
+                margin: 0 auto;
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                
+            }
+            .feature .features-box div:nth-of-type(1), .feature .features-box div:nth-of-type(2){
+                margin-top: 0;
+            }
+            .feature .features-box div{
+                width: 380px;
+                margin-top: 85px;
+
+            }
+            .feature .features-box div img{
+                float: left;
+                margin-right: 25px;
+                
+                
+
+            }
+            .feature .features-box div p:nth-of-type(1){
+                font-size: 20px;
+                line-height: 32px;
+                font-family: "Montserrat";
+                font-weight: bolder;
+                color: rgba(0, 0, 0, 0.6);
+                margin-bottom: 15px;
+            }
+            .feature .features-box div p:nth-of-type(2){
+                font-size: 16px;
+                line-height: 26px;
+                color: rgba(0, 0, 0, 0.7);
+                font-family: "Montserrat";
+                font-weight: lighter;
+                margin-left: 55px;
+            }
+            .feature .features-box div:nth-of-type(2) p:nth-of-type(2){
+                margin-left: 65px;
+            }
+            .feature .features-box div:nth-of-type(3) p:nth-of-type(2){
+                margin-left: 75px;
+            }
+            .feature .features-box div:nth-of-type(4) p:nth-of-type(2){
+                margin-left: 75px;
+            }
+            .action{
+                height: 800px;
+                width: 100%;
+                background-image: url('images/Background3.jpg');
+
+                position: relative;
+            }
+            .action .content{
+                position: absolute;
+                top: 220px;
+                left: 317px;
+
+            }
+            .action .text{
+                width: 372px;
+            }
+            .action .text p:nth-of-type(1){
+                font-size: 42px;
+                line-height: 52px;
+                font-family: Montserrat;
+                color: rgba(255, 255, 255, 0.8);
+                font-weight: lighter;
+                margin-bottom: 30px;
+                
+
+            }
+            .action .text p:nth-of-type(2){
+                font-size: 18px;
+                line-height: 28px;
+                font-weight: lighter;
+                font-family:  "Montserrat";
+                color: rgba(255, 255, 255, 0.7);
+                margin-bottom: 30px;
+            }
+            .action .button{
+                width: 500px;
+                font-size: 12px;
+                font-family: "Montserrat";
+                
+            }
+
+            .action .button button{
+                width: 232px;
+                height: 50px;
+                border: 1px solid rgba(255, 255, 255, 0.2);  
+            }
+            .action .button button:nth-of-type(1){
+                margin-right: 30px;
+                
+            }
+            .action .button button:nth-of-type(2){
+                background-color: transparent;
+                color: rgb(255, 255, 255);
+                
+            }
+            .feature-2{
+                width: 100%;
+                height: 580px;
+                position: relative;
+                border-bottom: 1.5px solid rgba(0, 0, 0, 0.1); 
+                
+            }
+            .feature-2 .title{
+                position: absolute;
+                top: 99px;
+                font-size: 42px;
+                line-height: 52px;
+                font-family: Montserrat;
+                color: rgba(0, 0, 0, 0.7);
+                width: 100%;
+                text-align: center;
+            }
+
+            .feature-2 .logos{
+                position: absolute;
+                top:228px;
+                height: 290px;
+                width: 100%;
+            }
+
+            .feature-2 .logos .logo-box{
+                width: 960px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+            }
+            .feature-2 .logos  .logo-box div[class*="logo"]{
+                width: 260px;
+                text-align: center;
+            }
+            .feature-2 .logos  .logo-box div[class*="logo"] img{
+                display: inline-block;
+                margin-bottom: 40px;
+            }
+
+            .feature-3{
+                width: 100%;
+                height: 1000px;
+                border-bottom: 1.5px solid rgba(0, 0, 0, 0.1); 
+
+            }
+            .feature-3 .feature-box{
+                width: 62%;
+                height: 90%;
+                margin: 0 auto;
+                position: relative;
+                top: 35px;
+                
+                
+            }
+            .feature-3 .feature-box .box{
+                width: 100%;
+                height: 50%;
+                display: flex;
+                justify-content: space-between;
+                align-items:center;
+                
+            }
+            .feature-3 .feature-box .box div[class*="content"]{
+                width: 300px;
+
+            }
+
+            .feature-3 .feature-box .box .content1{
+                margin-left: 50px;
+
+            }
+            .feature-3 .feature-box .box .content2{
+                margin-right: 40px;
+            }
+            .feature-3 .feature-box .box div[class*="content"] p:nth-of-type(1){
+                font-size: 20px;
+                line-height: 32px;
+                font-family: "Montserrat";
+                margin-bottom: 25px;
+                
+            }
+            .feature-3 .feature-box .box div[class*="content"] p:nth-of-type(2){
+                font-size: 16px;
+                line-height: 28px;
+                font-family: "Montserrat";
+                color: rgba(0, 0, 0, 0.7);
+            }
+
+            .team{
+                width: 100%;
+                height: 1080px;
+                border-bottom: 1.5px solid rgba(0, 0, 0, 0.1); 
+            }
+            .team .team-box{
+                width: 62%;
+                height: 90%;
+                margin: 0 auto;
+                position: relative;
+                top: 60px;
+            }
+
+            .team .team-box .title{
+                height: 20%;
+                width: 700px;
+                margin: 0 auto;
+                text-align: center;
+            }
+            .team .team-box .title p:nth-of-type(1){
+                font-size: 42px;
+                line-height: 52px;
+                font-family: "Montserrat";
+                color: rgba(0, 0, 0, 0.8);
+                margin-bottom: 20px;
+            }
+            .team .team-box .title p:nth-of-type(2){
+                font-size: 18px;
+                line-height: 28px;
+                font-family: "Montserrat";
+                columns: rgba(0, 0, 0, 0.7);
+                font-weight: lighter;
+            }
+
+
+            .team .team-box .team{
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                height: 70%;
+                width: 100%;
+                
+            }
+            .team .team-box .team .team-name{
+                margin: 5px 20px;
+                position: relative;
+            }
+            .team .team-box .team .team-name .cover{
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 1;
+            }
+            .team .team-box .team-name:hover .cover{
+                opacity: 0.9;
+                
+            }
+            .contact{
+                width: 100%;
+                height: 700px;
+                
+            }
+
+            .contact .contact-box{
+                width: 60%;
+                height: 85%;
+                margin: 0 auto;
+                position: relative;
+                top: 45px;
+                
+                
+            }
+            .contact .left{
+                width: 470px;
+                height: 100%;
+                border: 1px solid rgba(0, 0, 0, 0.1); 
+                box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+                float: left;
+            }
+            .contact .right{
+                width: 420px;
+                height: 70%;
+                
+                float: right;
+                position: relative;
+                top: 100px;
+                left: 10px;
+            }
+            .contact .left p{
+                font-size: 16px;
+                line-height: 32px;
+                font-family: Montserrat;
+                font-weight: bold;
+                text-align: center;
+                position: relative;
+                top: 50px;
+            }
+            .contact .left form{
+                position: relative;
+                top: 110px;
+                height: 380px;
+                width: 370px;
+                margin: 0 auto;
+                text-align: center;
+            }
+            .contact .left form input{
+                width: 90%;
+                height: 50px;
+                margin-bottom: 30px;
+                border: 1px solid rgba(0, 0, 0, 0.1); 
+                text-indent: 1.5em;
+            }
+
+            .contact .left form textarea{
+                display: block;
+                text-indent: 1.5em;
+                width: 90%;
+                padding-top: 15px;
+                margin: 0 auto;
+                border: 1px solid rgba(0, 0, 0, 0.1); 
+                resize: none;
+                margin-bottom: 30px;
+            }
+            .contact .left form button{
+                
+                width: 90%;
+                height: 50px;
+                background: black;
+                color: white;
+                font-size: 12px;
+                font-family: "Montserrat Light";
+                letter-spacing: 3px;
+            }
+
+            .contact .right .text h1{
+                font-size: 42px;
+                line-height: 52px;
+                font-family: "Montserrat";
+                color: rgba(0, 0, 0, 0.8);
+                margin-bottom: 25px;
+            }
+            .contact .right .text p{
+                font-size: 16px;
+                line-height: 26px;
+                font-family: "Montserrat";
+                color: rgba(0, 0, 0, 0.9);
+                font-weight: lighter;
+                margin-bottom: 75px;
+            }
+
+            .contact .right .info{
+                width: 270px;
+                height: 160px;
+            }
+            .contact .right .info div{
+                display: flex;
+                flex-flow: row wrap;
+                align-items: flex-start;
+                margin-bottom: 20px;
+            }
+
+            .contact .right .info div img{
+                margin-right: 20px;
+                
+            }
+            .contact .right .info div p{
+                font-size: 16px;
+                line-height: 26px;
+            }
+            .contact .right .info div:first-child img{
+                margin-top: 8px;
+            }
+            .contact .right .info div:last-child img{
+                margin-top: 10px;
+            }
+            .contact .right .info div:last-child p{
+                margin-top: 7px;
+            }
+
+            .footer{
+                width: 100%;
+                height: 420px;
+                background: black;
+            }
+            .footer .footer-box{
+                width: 70%;
+                height: 60%;
+                position: relative;
+                top: 85px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+            }
+
+
+
+
+            .footer .footer-box .link{
+                width: 700px;
+                display: flex;
+                justify-content: space-between;
+                
+            }
+            .footer .footer-box .link div h4, .footer .footer-box .social .text h4{
+                font-size: 14px;
+                line-height: 28px;
+                letter-spacing: 2px;
+                color: rgba(255, 255, 255, 0.8);
+                margin-bottom: 10px;
+
+            }
+            .footer .footer-box .link div a{
+                display: block;
+                font-size: 16px;
+                line-height: 46px;
+                color: rgba(255, 255, 255, 0.3);
+                text-decoration: none;
+
+            }
+            .footer .footer-box .social{
+                width: 280px;
+                
+            }
+            .footer .footer-box .social .text p{
+                font-size: 18px;
+                line-height: 28px;
+                color: rgba(255, 255, 255, 0.4);
+                margin-top: 10px;
+            }
+            .footer .footer-box .social .icons{
+                display: flex;
+                justify-content: flex-start;
+                margin-right: 50px;
+
+            }
+            .footer .footer-box .social .icons img{
+                margin: 40px 12px;
+            }
+            .footer .footer-box .social .icons img:first-child{
+                margin-left: 0;
+            }
+
+
+
+
+
+
+
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="title1">Hello World</div>
+            <div class="text">
+                <p>China is speeding up strategic plan, standards, traffic rules, laws and regulations on accident-incurred liabilities for its smart car industry, Economic Information Daily reported Thursday.</p>
+            </div>
+            <div class="sign">
+                <div class="sign-box">
+                    <div class="title2">CREATE YOUR ACCOUNT</div>
+                    <div class="subtitle">IT IS ABSOLUTELY FREE</div>
+                    <form action="#" method="POST">
+                        <input type="text" name="name" placeholder="  Passer6y@d0g3.com">
+                        <input type="password" name="password" placeholder="  Create your password">
+                        <button type="submit">SIGN UP</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="title1">BOATLOADS OF AWESOME</div>
+            <div class="title2">Ready-made,customizable,HTML<br>landing page section</div>
+            <div class="features">
+                <div class="features-box">
+                    <div class="content">
+                        <img src="images/Iphone Icon.jpg" alt="phone-icon">
+                        <section>
+                            <p>Mobile First</p>
+                            <p>All modulz are built mobile-first for maxim device compatibility</p>
+                        </section>
+                    </div>
+                    <div class="content">
+                        <img src="images/Check Icon.jpg" alt="">
+                        <section>
+                            <p>Accessibility</p>
+                            <p>Support for IE8,mobile and tablet devices,screenreders and color blind.</p>
+                        </section>
+                    </div>
+                    <div class="content">
+                        <img src="images/Pencil Icon.jpg" alt="">
+                        <section>
+                            <p>Fluid Typography</p>
+                            <p>On different screen sizes,fonts automagically scale with the viewport.</p>
+                        </section>
+                    </div>
+                    <div class="content">
+                        <img src="images/Settings Icon.jpg" alt="">
+                        <section>
+                            <p>Customization</p>
+                            <p>Make any design your own using the Style Editor.Personalize fonts,colors,and layouts to create the custorm look you want. </p>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="action">
+            <div class="content">
+                <div class="text">
+                    <p>Supportive policies for China's smart car</p>
+                    <p>China will come up with its own smart car standards,traffic rules,laws and regulations relating to safety.according to the China industy innovation Aliance for the intelligent and Connected Vehicles.</p>
+                </div>
+                <div class="button">
+                    <button class="bt1">CHECK OUT FEATURES</button>
+                    <button class="bt2">TRY PRODUCT FOR FREE</button>
+                </div>
+            </div>
+        </div>
+        <div class="feature-2">
+            <div class="title">
+                Try Our Awesome Products
+            </div>
+            <div class="logos">
+                <div class="logo-box">
+                    <div class="logo1">
+                        <img src="images/Singleton.jpg" alt="">
+                        <p>Li Jun, a China Academy of Engineering academician and also director of the alliance's experts' committee, said that China will also launch design guidance for smart cars, smart map architecture and standards for test grounds.</p>
+                    </div>
+                    <div class="logo2">
+                        <img src="images/Hero.jpg" alt="">
+                        <p>Li said the smart car industry is able to enlarge the current car industry by 1 trillion yuan ($158.15 billion) and also able to boost fast development in 5G, internet of cars, big data, artificial intelligence and new-energy vehicles.</p>
+                    </div>
+                    <div class="logo3">
+                        <img src="images/Portland.jpg" alt="">
+                        <p>Zhang Junyi, a partner with NIO Capital, said that the smart car is the trend for the car industry and China's auto sector will usher in a new key development stage with the improvement of infrastructure, technology, policies and laws.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="feature-3">
+            <div class="feature-box">
+                <div class="box">
+                    <div class="img"><img src="images/Background4.png" alt=""></div>
+                    <div class="content1">
+                        <p>Learn How to Improve Your Personal Business</p>
+                        <p>Li Jun, a China Academy of Engineering academician and also director of the alliance's experts' committee, said that China will also launch design guidance for smart cars, smart map architecture and standards for test grounds.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="content2">
+                        <p>Choose Between Two Beautifully Designed Color Schemes.</p>
+                        <p>China will come up with its own smart car standards, traffic rules, laws and regulations relating to safety, according to the China Industry Innovation Alliance for the Intelligent and Connected Vehicles.</p>
+                    </div>
+                    <div class="img"><img src="images/Background5.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team">
+            <div class="team-box">
+                <div class="title">
+                    <p>Our Awesome Crew</p>
+                    <p>Our unique online teaching style makes learning easy for everyone. Whether you are trying to land a new job, brush up on your skills.</p>
+                </div>
+                <div class="team">
+                    <div class="team-name">
+                        <img src="images/Userpic-1.jpg" alt="">
+                        <div><img class="cover" src="images/active.jpg" alt=""></div>
+                    </div>
+                    <div class="team-name">
+                        <img src="images/Userpic 2.jpg" alt="">
+                        <div><img class="cover" src="images/active.jpg" alt=""></div>
+                    </div>
+                    <div class="team-name">
+                        <img src="images/Userpic 3.jpg" alt="">
+                        <div><img class="cover" src="images/active.jpg" alt=""></div>
+                    </div>
+                    <div class="team-name">
+                        <img src="images/Userpic 4.jpg" alt="">
+                        <div><img class="cover" src="images/active.jpg" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact">
+            <div class="contact-box">
+                <div class="left">
+                    <p>FELL FREE TO WRITE US</p>
+                    <form action="#">
+                        <input type="text" name="email" placeholder=" E-mail">
+                        <input type="text" name="subject" placeholder=" Subject">
+                        <textarea name="message" placeholder="Message" cols="30" rows="10"></textarea>
+                        <button type="submit">SEND</button>
+                    </form>
+                </div>
+                <div class="right">
+                    <div class="text">
+                        <h1>Contacts</h1>
+                        <p>Make any design your own using the Style Editor. Personalize fonts, colors, and layouts to create the custom look you want.</p>
+                    </div>
+                    <div class="info">
+                        <div>
+                            <img src="images/Map Icon.jpg" alt="">
+                            <p>360 King Street<br>Feastrvale Trevose, PA 19057</p>
+                        </div>
+                        <div>
+                            <img src="images/Phone Icon.jpg" alt="">
+                            <p>(755) 564-84-12</p>
+                        </div>
+                        <div>
+                            <img src="images/Mail Icona.jpg" alt="">
+                            <p>0xpasser6y@gmail.com</p>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-box">
+                <div class="link">
+                    <div>
+                        <h4>LEARN MORE</h4>
+                        <a href="#">How it works?</a>
+                        <a href="#">Meeting tools</a>
+                        <a href="#">Live streaming</a>
+                        <a href="#">Contact method</a>
+                    </div>
+                    <div>
+                        <h4>ABOUT US</h4>
+                        <a href="#">About us</a>
+                        <a href="#">Features</a>
+                        <a href="#">Privacy police</a>
+                        <a href="#">Terms & Conditions</a>
+                    </div>
+                    <div>
+                        <h4>SUPPORT</h4>
+                        <a href="#">F.A.Q</a>
+                        <a href="#">Contact us</a>
+                        <a href="#">Live chat</a>
+                        <a href="#">Phone call</a>
+                    </div>                
+                </div>
+                <div class="social">
+                    <div class="text">
+                        <h4>ENJOY YOUR LIFE</h4>
+                        <p>Creat web UI kit for designers<br> freelnacers or business</p>
+                    </div>
+                    <div class="icons">
+                        <img src="images/Twitter Icon.jpg" alt="">
+                        <img src="images/Facebook Icon.jpg" alt="">
+                        <img src="images/Google Icon.jpg" alt="">
+                        <img src="images/Tumbler Icon.jpg" alt="">
+                        <img src="images/Pinterest Icon.jpg" alt="">
+                        <img src="images/LinkedIn Icon.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
