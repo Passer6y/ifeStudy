@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    html,body{
+        height: 100%;
+        /* 用flex实现左中右三列布局 左中宽度固定，右边宽度自适应*/
+        width: 100%;
+        min-width: 1200px;
+        display: flex;
+        flex-flow: row, wrap;
+        overflow-y: hidden;
+    }
+    
+    .menu{
+        height: 100%;
+        display: flex;
+       /*让两个sidebar在同一行*/
+       
+        
+    }
+
+    .menu .left-sidebar{
+        height: 100%;
+        width: 100px;
+        background: url('image/Base.png');
+        position: relative;
+    }
+
+    .menu .left-sidebar .item-botoom{
+        width: 100%;
+        height: 320px;
+        text-align: center;
+    }
+
+    .menu .left-sidebar .item-botoom div[class*="item"]{   
+        margin: 15px auto;
+        position: relative;
+    }
+
+
+    .menu .left-sidebar .item-botoom img[class*="active"]{
+        position: absolute;
+        left: 0;
+        top: 25px;
+        opacity: 0;
+        /*  也可以用before实现 */
+
+    }
+    .menu .left-sidebar .item-botoom img.active{
+        opacity: 1;
+    }
+
+    .menu .left-sidebar .item-botoom .item1{
+
+    }
+
+    .menu .left-sidebar .action-bottom{
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        
+    }
+    .menu .left-sidebar .action-bottom .icons{
+        width: 65%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .menu .right-sidebar{
+        height: 100%;
+        width: 250px;
+        background: url('image/Base Secondary.png');
+        padding: 30px 30px;
+        position: relative;
+    }
+    .menu .right-sidebar .part.menu{
+        width: 100%;
+        height: 250px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+    }
+
+    .menu .right-sidebar .news{
+        position:absolute;
+        right: 0;
+        background-color: #2b9ff6;
+        width: 32px;
+        height: 24px;
+        text-align: center;
+        border-radius: 10px;
+        color: white;
+        
+    }
+    .menu .alert{
+        position: absolute;
+        right: 0;
+        width: 24px;
+        height: 24px;
+        background: red;
+        border-radius: 12px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: bolder;
+    }
+    .menu .right-sidebar .active{
+        
+    }
+
+
+ 
+    .menu .right-sidebar .part dl dt{
+        margin-bottom: 10px;
+        font-size: 12px;
+        line-height: 40px;
+        font-family: "ProximaNova";
+        font-weight: bold;
+        color: rgba(255,255,255,0.3);
+    }
+    .menu .right-sidebar .part dl dt img{
+        position: absolute;
+        right: 0;
+        margin-top: 13px;
+    }
+    .menu .right-sidebar .part dl dd{
+        margin-bottom: 15px;
+        color: rgba(255,255,255,0.6);
+        font-size: 16px;
+        
+    }
+    .menu .right-sidebar .part.product{
+        height: 220px;
+        position: relative;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 10px;
+    }
+
+    .menu .right-sidebar .part.product dl dt{
+        margin-bottom: 15px;
+    }
+
+    .menu .right-sidebar .part.product dl dd a{
+        display: inline-block;
+        text-decoration: none;
+        color: rgba(255,255,255,0.6);
+        
+    }
+    .menu .right-sidebar .part.product dl dd img{
+        width: 18px;
+        vertical-align:middle;
+        margin-right: 5px;
+    }
+    .menu .right-sidebar .part.dashboard{
+        position: relative;
+        margin-top: 10px;
+    }
+    .menu .right-sidebar .count{
+        position: absolute;
+        bottom: 7px;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        
+    }
+    .menu .right-sidebar .count{
+        color: rgba(255,255,255,0.6);
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .menu .right-sidebar .count .conunt-box{
+        width: 190px;
+        margin: 0 auto;
+
+    }
+    .menu .right-sidebar .count .conunt-box span:nth-of-type(1){
+        float: left;
+    }
+    .menu .right-sidebar .count .conunt-box span:nth-of-type(2){
+        float: right;
+        margin-bottom: 10px;
+    }
+    .menu .right-sidebar .count .conunt-box .strip{
+        clear: both;
+        width: 190px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        
+    }
+    .menu .right-sidebar .count .conunt-box .strip div{
+        width: 30%;
+        height: 100%;
+        background: #8b70e5;
+        border-radius: 5px;
+    }
+
+    .menu .choose::before{
+    content: "";
+    position: absolute;
+    border-radius: 100px;
+    display: block;
+    box-shadow: 1px 0 5px 2px #214e74;
+    width: 2px;
+    height: 4px;
+    background-color: #2399f1;
+    top: 60px;
+    left: -29px;
+    }
+
+    .msg{
+        width: 100%;
+        height: 100%;
+    }
+    .msg .top-bar{
+        width: 100%;
+        height: 85px;
+        position: relative;
+        border-bottom: 1px solid #ccc;
+    }
+    .msg .top-bar h1{
+        position: absolute;
+        left:30px;
+        line-height: 80px;
+        font-size: 24px;
+    }
+    .msg .top-bar .profile{
+        position: absolute;
+        right: 30px;
+        height: 80px;
+        width: 220px;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .msg .top-bar .profile img{
+        width: 58px;
+        height: 58px;
+        border-radius: 29px;
+        margin: 10px;
+    }
+    .msg .top-bar .profile .name-role{
+        margin-top:20px;
+        margin-left: 5px;
+        
+    }
+
+    .msg .top-bar .profile  .name-role .name{
+        font-size: 16px;
+        color: #2399f1;
+    }
+    .msg .top-bar .profile  .name-role .role{
+        font-size: 14px;
+        color: rgba(0,0,0,0.3);
+
+    }
+    .msg .top-bar .profile .dropdown{
+        height: 100%;
+        
+    }
+    .msg .top-bar .profile .dropdown img{
+        width: auto;
+        height: auto;
+        margin-top: 32px;
+    }
+    
+    .msg .bottom{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+    }
+    .msg .msg-list{
+        width: 400px;
+        height: calc(100% -85px);
+        float: left;
+        position: relative;
+        border-right: 1px solid #ccc;
+        
+    }
+
+    .msg .msg-list .search{
+        height: 70px;
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        position: absolute;
+        top:0;
+    }
+    .msg .msg-list .search .search-box{
+        display: block;
+        width: 340px;
+        height: 35px;
+        margin: 0 auto;
+        margin-top: 17.5px;
+        margin-bottom: 17.5px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-indent: 1em;
+        
+    }
+    .msg .msg-list .search .search-box .m-search{
+        height: 100%;
+        width: 85%;
+        outline: none;   /*关闭聚焦时的外框*/
+    }
+    .msg .msg-list .search .search-box img{
+        width: auto;
+        height: auto;
+        position: relative;
+        top:3px;
+        left: 2px;
+        cursor: pointer;  /*悬停变成小手*/
+    }
+    .msg .msg-list .dayly-news{
+        width: 100%;
+        height: calc(100% - 142px);
+        overflow: scroll;
+        position: relative;
+        top: 70px;
+        /* 滚动条样式 */
+        overflow: -moz-scrollbars-none;
+        -ms-overflow-style: none;
+
+    }
+    .msg .msg-list .dayly-news::-webkit-scrollbar{
+        /* 滚动条样式 */
+        width: 0;
+    }
+    .msg .msg-list .dayly-news ul li{
+        width: 400px;
+        height: 130px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .msg .msg-list .dayly-news ul li .news-box{
+        width: 90%;
+        height: 90%;
+        
+        margin: 0 auto;
+        position: relative;
+        top:10%;
+        
+    }
+    .msg .msg-list .dayly-news ul li .news-box .info{
+        height: 70px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .msg .msg-list .dayly-news ul li .news-box .info img{
+        width: 58px;
+        height: 58px;
+        border-radius: 29px;
+    }
+    .msg .msg-list .dayly-news ul li .news-box .info .date{
+        position: relative;
+        top: 8px;
+        color: #7f8fa4;
+    }
+
+    .msg .msg-list .dayly-news ul li .news-box .info div{
+        position: relative;
+        right: 50px;
+        top: 8px;
+
+    }
+    .msg .msg-list .dayly-news ul li .news-box .info div .name{
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 2px;
+    }
+    .msg .msg-list .dayly-news ul li .news-box .info div .kind{
+        font-size: 14px;
+        color: #b5b5b5;
+    }
+    .msg .msg-list .dayly-news ul li .news-box .digest .digest-content{
+        display: inline-block;
+        width: 90%;
+        float: left;
+        font-size: 14px;
+        line-height: 19px;
+        position: relative;
+        left: 10px;
+    }
+    .msg .msg-list .dayly-news ul li .news-box .digest .digest-num{
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        border-radius: 12px;
+        background: #2a9ff6;
+        text-align: center;
+        float: right;
+        position: relative;
+        top:5px;
+        color: white;
+    }
+    .msg .msg-list .dayly-news ul li .active::before{
+        content: "";
+        position: absolute;
+        left: -20px;
+        top:-15px;
+        height: 130px;
+        width: 3px;
+        background:#2399FF;
+    }
+    .msg .msg-content{
+        width: 100%;
+    }
+    .msg .msg-content .header{
+        width: 100%;
+        height: 70px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .msg .msg-content img{
+        width: 20px;
+        height: 20px;
+    }
+    .msg .msg-content .header{
+        display: flex;
+        justify-content: space-between;
+    }
+    .msg .msg-content .header span{
+        margin-left: 30px;
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 36px;
+        font-weight: bold;
+    }
+    .msg .msg-content .header span::after{
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: #1bb934;
+        border-radius: 8px;
+        margin-left: 12px;
+        margin-bottom: 2px;
+        
+    }
+    .msg .msg-content .header .functions{
+        margin-top: 25px;
+        margin-right: 30px;
+    }
+    .msg .msg-content .content-box{
+        height: calc(100% - 150px);
+        width: 90%;
+        
+        margin: 0 auto;
+        overflow: scroll;
+        margin-top: 20px;
+
+    }
+    .msg .msg-content .content-box::-webkit-scrollbar{
+        /* 滚动条样式 */
+        width: 0;
+    }
+    .msg .msg-content .content-box .part ul li {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        
+    }
+    .msg .msg-content .content-box .part ul li .list .title{ 
+        font-size: 16px;
+        font-weight: bold;
+        
+    }
+    .msg .msg-content .content-box .part ul li .list .tag{
+        display: inline-block;
+        font-size: 14px;
+        color: #7f8fa4;
+        margin-left: 10px;
+        padding: 0 4px;
+        border: 1px solid #7f8fa4;
+        border-radius: 8px;
+        position: relative;
+        bottom:1px;
+    }  
+    .msg .msg-content .content-box .part ul li .list a{
+        display: inline-block;
+        text-decoration: none;
+        margin-top: 5px;
+
+    } 
+    .msg .msg-content .content-box .part .line{
+        height: 1px;
+        text-align: center;  /*让span中间文字到中间*/
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+    }
+    .msg .msg-content .content-box .part .line span{
+        position: relative;
+        top: -12px;         /*移动到线上*/
+        font-size: 14px;
+        color: #7f8fa4;
+        background: white;
+        padding: 0 20px;
+    }
+
+
+
+
+    
+
+
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="left-sidebar">
+            <div class="item-botoom">
+                <div class="item1">
+                    <a href="#"><img src="image/Item 1.png" alt=""></a>
+                    <div><img class="active" src="image/Active Highlight.png" alt=""></div>
+                </div>
+                <div class="item2">
+                    <a href="#"> <img src="image/Item 2.png" alt=""></a>
+                    <div><img class="noactive" src="image/Active Highlight.png" alt=""></div>
+                </div>
+                <div class="item3">
+                    <a href="#"><img src="image/Item 3.png" alt=""></a>
+                    <div><img class="noactive" src="image/Active Highlight.png" alt=""></div>
+                </div>
+                <div class="item-add">
+                    <a href="#"><img src="image/Add App.png" alt=""></a>
+                    <div><img class="noactive" src="image/Active Highlight.png" alt=""></div>
+                </div>
+            </div>
+            <div class="action-bottom">
+                <div class="icons">
+                    <a href="#"><img class="grid" src="image/Grid.png" alt=""></a>
+                    <a href="#"><img class="setting" src="image/Settings.png" alt=""> </a>   
+                </div>
+            </div>
+        </div>
+        <div class="right-sidebar">
+            <div class="part menu">
+                <dl>
+                    <dt>MENU <img src="image/Settings.png" alt=""></dt>
+                    <dd>Overview</dd>
+                    <dd>Sales <span class="news">54</span></dd>
+                    <dd>Your Staff</dd>
+                    <dd>Analytics & Targeting</dd>
+                    <dd>What’s New</dd>
+                </dl>
+            </div>
+            <div class="part product">
+                <dl>
+                    <dt>YOUR PEODUCTS <img src="image/Settings.png" alt=""></dt>
+                    <dd><a href="#"><img src="image/Book of Wisdom.png" alt=""> Book</a></dd>
+                    <dd><a href="#"><img src="image/Video Camera.png" alt=""> Tutorials</a></dd>
+                    <dd><a href="#"><img src="image/Chart.png" alt=""> Stocks</a></dd>
+                    <dd><a href="#"><img src="image/Painting.png" alt="">  Infographics</a></dd>
+                </dl>
+            </div>
+            <div class="part dashboard">
+                <dl>
+                    <dt>DASHBOARD<img src="image/Settings.png" alt=""></dt>
+                    <dd class="choose">Messages 
+                        <span class="news">21</span>
+                    </dd>
+                    <dd>Connections</dd>
+                    <dd>Integrations <span class="alert">!</span></dd>
+                    <dd>Account Settings</dd>
+                    <dd>App Settings</dd>
+                </dl>
+            </div>
+            <div class="count">
+                <div class="conunt-box">
+                    <span>Total Data</span>
+                    <span>580/3200</span>
+                    <div class="strip">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="msg">
+        <div class="top-bar">
+            <h1>Messages</h1>
+            <div class="profile">
+                <img src="https://i.loli.net/2019/01/28/5c4e7baee4685.jpg" alt="">
+                <div class="name-role">
+                    <span class="name">Passer6y</span>
+                    <span class="role">Administrator</span>
+                </div>
+                <div class="dropdown">
+                    <a href="#"><img src="image/dropdown.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="msg-list">
+                <div class="search">
+                    <div class="search-box">
+                        <input type="text" class="m-search" placeholder="Search">
+                        <img src="image/Search icon.png" alt="">
+                    </div>
+                </div>
+                <div class="dayly-news">
+                    <ul>
+                        <li>
+                            <div class="news-box active">
+                                <div class="info">
+                                    <img src="https://i.loli.net/2019/01/28/5c4e7baee4685.jpg" alt="">
+                                    <div>
+                                        <span class="name">Passer6y</span><br>
+                                        <span class="kind">Web</span>
+                                    </div>
+                                    <span class="date">2019-01-28</span>
+                                </div>
+                                <div class="digest">
+                                    <span class="digest-content">
+                                        pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick...</span>
+                                    <span class="digest-num">
+                                        12
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="news-box">
+                                <div class="info">
+                                    <img src="https://i.loli.net/2019/01/28/5c4e7baee4685.jpg" alt="">
+                                    <div>
+                                        <span class="name">Passer6y</span><br>
+                                        <span class="kind">Web</span>
+                                    </div>
+                                    <span class="date">2019-01-27</span>
+                                </div>
+                                <div class="digest">
+                                    <span class="digest-content">
+                                        pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick...</span>
+                                    <span class="digest-num">
+                                        9
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="news-box">
+                                <div class="info">
+                                    <img src="https://i.loli.net/2019/01/28/5c4e7baee4685.jpg" alt="">
+                                    <div>
+                                        <span class="name">Passer6y</span><br>
+                                        <span class="kind">Web</span>
+                                    </div>
+                                    <span class="date">2019-01-26</span>
+                                </div>
+                                <div class="digest">
+                                    <span class="digest-content">
+                                        pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick...</span>
+                                    <span class="digest-num">
+                                        7
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="news-box">
+                                <div class="info">
+                                    <img src="https://i.loli.net/2019/01/28/5c4e7baee4685.jpg" alt="">
+                                    <div>
+                                        <span class="name">Passer6y</span><br>
+                                        <span class="kind">Web</span>
+                                    </div>
+                                    <span class="date">2019-01-25</span>
+                                </div>
+                                <div class="digest">
+                                    <span class="digest-content">
+                                        pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick...</span>
+                                    <span class="digest-num">
+                                        22
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="news-box">
+                                <div class="info">
+                                    <img src="https://i.loli.net/2019/01/28/5c4e7baee4685.jpg" alt="">
+                                    <div>
+                                        <span class="name">Passer6y</span><br>
+                                        <span class="kind">Web</span>
+                                    </div>
+                                    <span class="date">2019-01-24</span>
+                                </div>
+                                <div class="digest">
+                                    <span class="digest-content">
+                                        pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick...</span>
+                                    <span class="digest-num">
+                                        46
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="news-box">
+                                <div class="info">
+                                    <img src="https://i.loli.net/2019/01/28/5c4e7baee4685.jpg" alt="">
+                                    <div>
+                                        <span class="name">Passer6y</span><br>
+                                        <span class="kind">Web</span>
+                                    </div>
+                                    <span class="date">2019-01-23</span>
+                                </div>
+                                <div class="digest">
+                                    <span class="digest-content">
+                                        pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick...</span>
+                                    <span class="digest-num">
+                                        46
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="news-box">
+                                <div class="info">
+                                    <img src="https://i.loli.net/2019/01/28/5c4e7baee4685.jpg" alt="">
+                                    <div>
+                                        <span class="name">Passer6y</span><br>
+                                        <span class="kind">Web</span>
+                                    </div>
+                                    <span class="date">2019-01-22</span>
+                                </div>
+                                <div class="digest">
+                                    <span class="digest-content">
+                                        pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick...</span>
+                                    <span class="digest-num">
+                                        46
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="news-box">
+                                <div class="info">
+                                    <img src="https://i.loli.net/2019/01/28/5c4e7baee4685.jpg" alt="">
+                                    <div>
+                                        <span class="name">Passer6y</span><br>
+                                        <span class="kind">Web</span>
+                                    </div>
+                                    <span class="date">2019-01-21</span>
+                                </div>
+                                <div class="digest">
+                                    <span class="digest-content">
+                                        pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick...</span>
+                                    <span class="digest-num">
+                                        46
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="msg-content">
+                <div class="header">
+                    <span>Passer6y</span>
+                    <div class="functions">
+                        <div class="icons">
+                            <img src="image/like.png" alt="">
+                            <img src="image/unlike.png" alt="">
+                            <img src="image/sprite.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="content-box">
+                    <div class="part">
+                        <ul>
+                            <li>
+                                <div class="list">
+                                    <span class="title">MacOS/iOS CVE-2019-6231 漏洞深入分析</span>
+                                    <span class="tag">CVE</span><span class="tag">Mac</span><span class="tag">Ios</span><br>
+                                    <a href="https://www.anquanke.com/post/id/170358">https://www.anquanke.com/post/id/170268</a>
+                                </div>
+                                <div class="like"><img src="image/like.png" alt=""></div>
+                            </li>
+                            <li>
+                                <div class="list">
+                                    <span class="title">PhpSpreadsheet 1.5.0 XXE漏洞复现及分析</span>
+                                    <span class="tag">代码审计</span><span class="tag">PHP</span><br>
+                                    <a href="https://www.anquanke.com/post/id/170068">https://www.anquanke.com/post/id/170068</a>
+                                </div>
+                                <div class="like"><img src="image/like.png" alt=""></div>
+                            </li>
+                            
+                            <li>
+                                <div class="list">
+                                    <span class="title">INS hack teaser 2019 逆向题解</span>
+                                    <span class="tag">CTF</span><span class="tag">Re</span><br>
+                                    <a href="https://www.anquanke.com/post/id/169970">https://www.anquanke.com/post/id/169970</a>
+                                </div>
+                                <div class="like"><img src="image/like.png" alt=""></div>
+                            </li>
+                        </ul>
+                        <div class="line"><span>↑ 安全客推送 ↑</span></div>
+                    </div>
+                    <div class="part">
+                        <ul>
+                            <li>
+                                <div class="list">
+                                    <span class="title">Self XSS到存储型XSS</span>
+                                    <span class="tag">Web</span><span class="tag">XSS</span><br>
+                                    <a href="https://xz.aliyun.com/t/3967">https://xz.aliyun.com/t/3967</a>
+                                </div>
+                                <div class="like"><img src="image/like.png" alt=""></div>
+                            </li>
+                            <li>
+                                <div class="list">
+                                    <span class="title">jenkins 无限制 rce 分析</span>
+                                    <span class="tag">Web</span><span class="tag">Java</span><br>
+                                    <a href="https://xz.aliyun.com/t/3912">https://xz.aliyun.com/t/3912</a>
+                                </div>
+                                <div class="like"><img src="image/like.png" alt=""></div>
+                            </li>
+                            <li>
+                                <div class="list">
+                                    <span class="title">php一句话绕过技术分析</span>
+                                    <span class="tag">Web</span><span class="tag">PHP</span><span class="tag">Bypass</span><br>
+                                    <a href="https://xz.aliyun.com/t/3924">https://xz.aliyun.com/t/3924</a>
+                                </div>
+                                <div class="like"><img src="image/like.png" alt=""></div>
+                            </li>
+                        </ul>
+                        <div class="line"><span>↑ 先知推送 ↑</span></div>
+                    </div>
+                    <div class="part">
+                            <ul>
+                                <li>
+                                    <div class="list">
+                                        <span class="title">Self XSS到存储型XSS</span>
+                                        <span class="tag">Web</span><span class="tag">XSS</span><br>
+                                        <a href="https://xz.aliyun.com/t/3967">https://xz.aliyun.com/t/3967</a>
+                                    </div>
+                                    <div class="like"><img src="image/like.png" alt=""></div>
+                                </li>
+                                <li>
+                                    <div class="list">
+                                        <span class="title">jenkins 无限制 rce 分析</span>
+                                        <span class="tag">Web</span><span class="tag">Java</span><br>
+                                        <a href="https://xz.aliyun.com/t/3912">https://xz.aliyun.com/t/3912</a>
+                                    </div>
+                                    <div class="like"><img src="image/like.png" alt=""></div>
+                                </li>
+                                <li>
+                                    <div class="list">
+                                        <span class="title">php一句话绕过技术分析</span>
+                                        <span class="tag">Web</span><span class="tag">PHP</span><span class="tag">Bypass</span><br>
+                                        <a href="https://xz.aliyun.com/t/3924">https://xz.aliyun.com/t/3924</a>
+                                    </div>
+                                    <div class="like"><img src="image/like.png" alt=""></div>
+                                </li>
+                                <li>
+                                     <div class="list">
+                                        <span class="title">php一句话绕过技术分析</span>
+                                        <span class="tag">Web</span><span class="tag">PHP</span><span class="tag">Bypass</span><br>
+                                        <a href="https://xz.aliyun.com/t/3924">https://xz.aliyun.com/t/3924</a>
+                                    </div>
+                                    <div class="like"><img src="image/like.png" alt=""></div>
+                                </li>
+                            </ul>
+                            <div class="line"><span>↑ 先知推送 ↑</span></div>
+                        </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
