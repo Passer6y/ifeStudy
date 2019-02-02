@@ -12,5 +12,7 @@
 
 ![](day9-11/day9-11.gif)
 
-- day12-15： 25th-29th Jan.
+- day12-15: 25th-29th Jan.
 ![](https://i.loli.net/2019/01/29/5c4fc69d0dc92.png)
+
+- day16-18: 1st-2nd Feb.

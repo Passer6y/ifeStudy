@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result">运算结果</p>
+
+
+
+    <script>
+        function output(result) {
+            p = document.getElementById('result');
+            p.innerHTML = "运算结果：" + result;
+            
+        }
+        document.getElementById('add-btn').addEventListener('click', function(){
+            var firstNum = document.getElementById('first-number').value;
+            var secondNum = document.getElementById('second-number').value;
+            var result = Number(firstNum) + Number(secondNum);
+            output(result);
+        });
+
+        document.getElementById('minus-btn').addEventListener('click', function(){
+            var firstNum = document.getElementById('first-number').value;
+            var secondNum = document.getElementById('second-number').value;
+            var result = Number(firstNum) - Number(secondNum);
+            output(result);
+        });
+
+        document.getElementById('times-btn').addEventListener('click', function(){
+            var firstNum = document.getElementById('first-number').value;
+            var secondNum = document.getElementById('second-number').value;
+            var result = Number(firstNum) * Number(secondNum);
+            output(result);
+        });
+        
+        document.getElementById('divide-btn').addEventListener('click', function(){
+            var firstNum = document.getElementById('first-number').value;
+            var secondNum = document.getElementById('second-number').value;
+            if(secondNum != 0){
+                var result = Number(firstNum) / Number(secondNum);
+                output(result);
+            }
+            output("被除数不能为0");
+        });
+
+    </script>
+</body>
+</html>

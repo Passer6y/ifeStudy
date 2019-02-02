@@ -1,0 +1,150 @@
+
+<!doctyle html>
+<html>
+<head>
+<title>简历</title>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    
+    width: 800px;
+    height: auto;
+    font-size: 16px;
+    margin: 0 auto;
+    
+} 
+
+.sidebar{
+    padding: 0 0 0 20px;
+    margin: 0;
+    width: 800px;
+    height: 60px;
+    background: rgba(55, 61, 63, 0.541);
+    line-height: 60px;
+}
+.base{
+    padding: 0;
+    margin: 0;
+    width: 800px;
+    height: 100px; 
+    border-top:2px solid grey;
+    border-right:2px solid grey;
+    
+}
+
+.base h2{
+    padding: 0;
+    margin: 0 20px 0 0;
+    float: left;
+    width:100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    background:rgba(158, 165, 167, 0.541);
+    
+}
+
+.base ul li{
+    display: inline-block;
+    padding: 0 40px 0 0;
+    margin: 0;
+    line-height: 100px;
+    font-size: 1rem;
+    
+}
+
+.contact,.describe, .education, .project{
+    clear: both;
+    padding: 0;
+    margin: 0;
+    width: 800px;
+    height: 100px;
+    border-top:2px solid grey;
+    border-right: 2px solid grey;
+}
+.project{
+    border-bottom:2px solid grey;
+}
+
+
+.contact h2, .describe h2, .education h2, .project h2{
+    float: left;
+    padding: 0;
+    margin: 0 20px 0 0;
+    width: 100px;
+    height: 100px;
+    background:rgba(158, 165, 167, 0.541);
+    border-top:1px solid grey;
+    text-align: center;
+    line-height: 100px;
+}
+
+
+.contact p,.describe p, .education p, .project p{
+    display: inline-block;
+    margin: 0 20px 0 0;
+    padding: 0;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 100px;
+}
+
+
+</style>
+</head>     
+<body>
+
+<div class="sidebar">
+    <h1>简历</h1> 
+
+</div>
+
+<div class="base">
+<h2>基本信息</h2>
+<ul>
+    <li><b>姓名：</b>Passer6y</li>
+    <li><b>性别：</b>男</li>
+    <li><b>应聘职位：</b>Web安全工程师</li>
+</ul>
+</div>
+   
+  
+<div class="contact">
+<h2>联系方式</h2>15612351234</p>
+<p>Email:123@123.com</p>
+<p>个人主页：<a href="http://passer6y.fun">Passer6y's Blog</a></p>
+</div>
+
+<div class="describe">
+    <h2>能力描述</h2>  
+    <p><b>技术能力 </b>熟练掌握全栈开发</p>
+    <p><b>综合能力 </b>良好的沟通能力，主动积极</p>
+</div>
+
+<div class="education">
+    <h2>教育经历</h2>
+    <p>本科：xx</p>
+</div>
+<div class="project">
+    <h2>项目经历</h2>
+    <p>参与xx比赛</p>
+</div>
+<script>
+    var time = new Date();
+    if(time.getHours > 6 && time.getHours < 12){
+        alert('上午好');
+    }
+    else if(time.getHours >= 12 && time.getHours < 18){
+        alert('下午好');
+    }
+    else{
+        alert('晚上好');
+    }
+</script>
+</body>
+
+</html>
